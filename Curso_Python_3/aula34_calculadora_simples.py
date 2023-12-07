@@ -1,6 +1,9 @@
 """
-Atividade aula 66 a 68
+
+Atividade aula 66 a 68 (Calculadora Simples)
+
 """
+
 while True:
   
   num_1 = input('Digite o Primerio número interio: ')

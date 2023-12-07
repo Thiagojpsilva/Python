@@ -1,6 +1,7 @@
 """
 Repetição 
-For - While
+While
+
 """
 
 qtd_linhas = 5   
