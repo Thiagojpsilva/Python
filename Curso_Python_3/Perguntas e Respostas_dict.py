@@ -2,7 +2,6 @@
 
 import random
 import os
-import emoji
 
 def input_asward():
     return input('Resposta: ') 
