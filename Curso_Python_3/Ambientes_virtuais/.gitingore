@@ -129,7 +129,7 @@ env.bak/
 venv.bak/
 Ambientes_virtuais/*
 Curso_Python_3/Ambientes_virtuais/*
-*
+
 
 # Spyder project settings
 .spyderproject
