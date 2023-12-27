@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "THIAGO",
+    "idade": 29,
+    "altura": 1.85,
+    "peso": 10
+  },
+  {
+    "nome": "TITA",
+    "idade": 29,
+    "altura": 1.65,
+    "peso": 72
+  },
+  {
+    "nome": "DAVI",
+    "idade": 7,
+    "altura": 1.52,
+    "peso": 26
+  }
+]
