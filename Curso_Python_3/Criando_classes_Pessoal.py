@@ -1,7 +1,8 @@
 
 import json
 
-PATH = 'C:\\Users\\f8084478\OneDrive - TIM\\Pessoal\\GIT\\Pessoal\\Python\\Curso_Python_3\\arquivos\\'
+PATH = 'C:\\Users\\f8084478\OneDrive - TIM\\Pessoal\\GIT\\Pessoal\\Python' \
+       '\\Curso_Python_3\\arquivos\\'
 ARQUIVOS = 'pesoas.json'
 local = PATH+ARQUIVOS
 

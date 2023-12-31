@@ -9,7 +9,6 @@ while True:
     num_1 = input('Digite o Primerio número interio: ')
     num_2 = input('Digite o Segundo número interio: ')
     operador = input('Digite a operação que deseja realizar(-,+,*,x,/): ')
-    numeros_validos = None
 
     try:
         num_1 = float(num_1)
@@ -28,19 +27,19 @@ while True:
             print(f'O resultado da Divisão dos numeros {
                   num_1} e {num_2} é: {num_1 / num_2}.')
         else:
-            print(f'Operador inválido.')
+            print('Operador inválido.')
             continue
 
-    except:
-        numeros_validos = None
+    except ImportError:
+        numeros_validos = False
 
-    if numeros_validos == None:
-        print(f'Um ou Ambos os números digitados não é/são válido[s].')
+    if not numeros_validos:
+        print('Um ou Ambos os números digitados não é/são válido[s].')
         continue
 
     sair = input(
         'Digite [s]air para encerrar a Calculadora: ').lower().startswith('s')
 
     if sair:
-        print(f'Até a Proxima!')
+        print('Até a Proxima!')
         break

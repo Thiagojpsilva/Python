@@ -32,7 +32,7 @@ while True:
     action = input("[L]istar Itens\n[N]ovo item\n[A]pagar Item\n[S]air\n -->")
 
     if action[:1].upper() == 'N':
-        while v_insert == False:
+        while not v_insert:
             item = incluir_item()
             if item not in lista:
                 lista.append(item)
@@ -43,7 +43,7 @@ while True:
     elif action[:1].upper() == 'L':
 
         print("Os Item em sua lista são:", '\n', '\n '.join(map(str, lista)))
-        v_out = input(f"Digite [C]ontinuar no Programa ou [S]air: ".upper())
+        v_out = input("Digite [C]ontinuar no Programa ou [S]air: ".upper())
 
     elif action[:1].upper() == 'A':
         deletar: str = input("Qual item deseja apagar? ").upper()

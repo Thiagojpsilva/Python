@@ -58,7 +58,7 @@ def list_task():
 
 def exec_func(funcao):
     result = funcao()
-    return None
+    return result
 
 
 def undo_list():

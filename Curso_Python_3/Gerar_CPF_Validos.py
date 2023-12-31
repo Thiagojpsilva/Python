@@ -1,8 +1,8 @@
 """
+
 Gerar CPF Valido
 
 """
-
 import re
 import random
 
