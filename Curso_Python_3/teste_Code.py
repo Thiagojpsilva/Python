@@ -1,9 +1,8 @@
 from abc import ABC
 
+
 class Teste (ABC):
-    ...        
-
-
+    ...
 
 
 # perguntas = [

@@ -1,6 +1,7 @@
-"""
-Exercício aula(131)
-Crie uma função que encontra o numero com a primeira ocorrencia de duplicadade. Retorne a duplicação considerada.
+"""Exercício aula(131)
+Crie uma função que encontra o numero com a 
+primeira ocorrencia de duplicadade.
+Retorne a duplicação considerada.
 Requisitos:
     Exemplo:
         [1, 2, 3, ->3<-, 2, 1] -> 1, 2 e 3 são duplicados (retorne 3)
@@ -26,6 +27,10 @@ lista_de_listas_de_inteiros = [
 
 
 def encontra_primeiro_duplicado(lista_de_inteiros):
+    """
+    Não tem descrição
+    """
+
     numeros_checados = set()
     primeiro_duplicado = -1
 

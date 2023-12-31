@@ -2,13 +2,10 @@
 Esse é o docString para fazer linhas anotaçães
 Multe linhas.
 """
-#Print inicial
+# Print inicial
 
 print("Hello World")
 print("Thiago")
 
-#Soma
+# Soma
 print(1+1)
-
-
-

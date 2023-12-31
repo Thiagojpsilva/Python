@@ -22,9 +22,8 @@ print("Luiz \"Otávio\"")
 print(r"Luiz \"Otávio\"")
 
 
-#type
+# type
 
 print(type(10))
 print(type(True))
 print(len("thiago"))
-

@@ -10,21 +10,23 @@ class A:
   #  def __new__(cls, *args, **kwargs):
   #     instancia = super().__new__(cls)
   #      return instancia
-  
+
     def __new__(cls):
         print('Ainda não crei a instancia')
         instancia = super().__new__(cls)
-        print ('Depois de criar a instancia')
+        print('Depois de criar a instancia')
         instancia.x = 213
         return instancia
 
     def __init__(self):
-        ##self.x = x
-        #print('Sou o init')
+        # self.x = x
+        # print('Sou o init')
         ...
+
     def __repr__(self):
         return 'A()'
 
+
 a = A()
-#a = A(123)
-print(a,a.x)
+# a = A(123)
+print(a, a.x)

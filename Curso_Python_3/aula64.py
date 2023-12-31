@@ -7,7 +7,8 @@ class MinhaString(str):
     def upper(self):
         print('CHAMOU UPPER')
         return super().upper()
-        
+
+
 string = MinhaString('Thiago')
 
 print(string.upper())

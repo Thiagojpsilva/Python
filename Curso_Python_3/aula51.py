@@ -13,23 +13,24 @@ alunos = [
     {'nome': 'Anderson', 'nota': 'C'},
 ]
 
+
 def ordena(a):
-   return a['nota']
+    return a['nota']
 
-alunos_agrupados = sorted(alunos,key=ordena)
 
-#for aluno in alunos_agrupados:
+alunos_agrupados = sorted(alunos, key=ordena)
+
+# for aluno in alunos_agrupados:
 #    print(aluno)
 
-#alunos = ['a','a','a','a','b','c','a','b']
-#alunos.sort()
+# alunos = ['a','a','a','a','b','c','a','b']
+# alunos.sort()
 
-#grupos = groupby(alunos)
+# grupos = groupby(alunos)
 grupos = groupby(alunos_agrupados, key=ordena)
 
-for chave,grupo in grupos:
-     print(f'Nota {chave}:')
-     for aluno in grupo:
+for chave, grupo in grupos:
+    print(f'Nota {chave}:')
+    for aluno in grupo:
         print(aluno['nome'])
-     print('')   
-     
+    print('')

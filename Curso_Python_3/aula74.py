@@ -30,9 +30,9 @@ class MyOpen:
         self._arquivo = open(self.caminho_arquivo, self.modo, encoding='utf8')
         return self._arquivo
 
-    def __exit__(self, class_exception, exception_, traceback_):
+    def __exit__(self, class_exception, exception_, traceback_) -> None:
         print('FECHANDO ARQUIVO')
-        self._arquivo.close()
+        return self._arquivo.close()
 
 
 with MyOpen('aula149.txt', 'w') as arquivo:

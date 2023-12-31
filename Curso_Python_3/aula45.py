@@ -1,20 +1,22 @@
-# Variáveis livres + nonlocal (locals, globals)
-# print(globals())
-# def fora(x):
-#     a = x
+"""
+ Variáveis livres + nonlocal (locals, globals)
+ print(globals())
+ def fora(x):
+     a = x
+     def dentro():
+         # print(locals())
 
-#     def dentro():
-#         # print(locals())
-
-#         return a
-#     return dentro
+         return a
+     return dentro
 
 
-# dentro1 = fora(10)
-# dentro2 = fora(20)
+ dentro1 = fora(10)
+ dentro2 = fora(20)
 
-# print(dentro1())
-# print(dentro2())
+ print(dentro1())
+ print(dentro2())
+"""
+
 
 def concatenar(string_inicial):
     valor_final = string_inicial

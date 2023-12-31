@@ -11,11 +11,11 @@ def criar_multiplicador(mult):
         return numero * mult
     return multiplicar
 
-#Main 
+# Main
+
+
 duplicar = criar_multiplicador(2)
 triplicar = criar_multiplicador(3)
 quadriplica = criar_multiplicador(4)
 
-print(duplicar(2),triplicar(2),quadriplica(2))
-
-
+print(duplicar(2), triplicar(2), quadriplica(2))

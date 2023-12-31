@@ -15,9 +15,10 @@ class Cliente:
         self.enderecos.append(endereco)
 
     def listar_enderecos(self):
-        #for endereco in self.enderecos:
+        # for endereco in self.enderecos:
         #    print(endereco.rua, endereco.numero)
-        address_string= [f"Rua {endereco.rua}, Numero {endereco.numero}" for endereco in self.enderecos]
+        address_string = [f"Rua {endereco.rua}, Numero {
+            endereco.numero}" for endereco in self.enderecos]
         print('\n'.join(address_string))
 
     def __del__(self):
@@ -40,11 +41,11 @@ cliente1.inserir_endereco('B', 6745)
 endereco_externo = Endereco('Av Saudade', 123213)
 cliente1.inserir_endereco_externo(endereco_externo)
 
-print(f'O cliente {cliente1.nome} possui os endereços:') 
+print(f'O cliente {cliente1.nome} possui os endereços:')
 cliente1.listar_enderecos()
 
 
-#cliente1.listar_enderecos()
+# cliente1.listar_enderecos()
 
 del cliente1
 

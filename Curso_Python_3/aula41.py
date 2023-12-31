@@ -1,7 +1,9 @@
-öö# AULA 143
-# Valores Truthy e Falsy, Tipos Mutáveis e Imutáveis
-# Mutáveis [] {} set()
-# Imutáveis () "" 0 0.0 None False range(0, 10)
+"""
+AULA 143
+Valores Truthy e Falsy, Tipos Mutáveis e Imutáveis
+Mutáveis [] {} set()
+Imutáveis () "" 0 0.0 None False range(0, 10)
+"""
 lista = []
 dicionario = {}
 conjunto = set()

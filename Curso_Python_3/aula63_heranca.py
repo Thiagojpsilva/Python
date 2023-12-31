@@ -10,23 +10,26 @@
 #   -> sub class, child class, derived class
 
 class Pessoa:
-    def __init__(self,nome,sobrenome):
+    def __init__(self, nome, sobrenome):
         self.nome = nome
         self.sobrenome = sobrenome
-    
+
     def falar_nome_classe(self):
         print('Classe: ', self.__class__.__name__)
+
 
 class Cliente(Pessoa):
     ...
 
+
 class Aluno(Pessoa):
     ...
-    
-c1 = Cliente('Thiago','Johnatas')
-a1 = Aluno('Katarina','Guilherme')
-    
-    
+
+
+c1 = Cliente('Thiago', 'Johnatas')
+a1 = Aluno('Katarina', 'Guilherme')
+
+
 print(f'Cliente: {c1.nome} {c1.sobrenome}')
 c1.falar_nome_classe()
 

@@ -10,7 +10,7 @@ for i in range(10):
         continue
     if i == 8:
         print(f'i é {i}, seu else não executará')
-      #  break
+        # break
     for j in range(1, 3):
         print(i, j)
 else:

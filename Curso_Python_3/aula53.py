@@ -1,4 +1,4 @@
-#Reduce - faz a redução de um iterável em um valor
+# Reduce - faz a redução de um iterável em um valor
 from functools import reduce
 
 produtos = [
@@ -14,10 +14,10 @@ produtos = [
 #     return acumulador + produto['preco']
 
 total = reduce(
-    #fucao_do_reduce,
-    lambda ac,p: ac + p['preco'],
+    # fucao_do_reduce,
+    lambda ac, p: ac + p['preco'],
     produtos,
-    0.0 #valor inicial
+    0.0  # valor inicial
 )
 
-print('Total é:',total)
+print('Total é:', total)

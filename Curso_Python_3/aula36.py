@@ -20,4 +20,3 @@ print(iteratador)
 
 for letra in texto:
     print(letra)
-    

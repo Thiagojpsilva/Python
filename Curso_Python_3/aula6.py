@@ -3,7 +3,7 @@ sobrenome = 'Johnatas'
 idade = 37
 ano_nascimento = 2023 - idade
 maior_de_idade = idade >= 18
-altura_metros =  1.85
+altura_metros = 1.85
 
 print('NOME:', nome)
 print('SOBRENOME:', sobrenome)

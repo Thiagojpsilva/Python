@@ -1,6 +1,9 @@
+"""
+Não ha descrição
+"""
 frase = 'Teste de contagem de letras para verificar qual' \
-'letra apareceu mais vezes. E vamos verificar'
-frase = frase.replace(" ","").lower()
+    'letra apareceu mais vezes. E vamos verificar'
+frase = frase.replace(" ", "").lower()
 i = 0
 qtd_apareceu_mais_vezes = 0
 letra_apareceu_mais_vezes = ''
