@@ -48,7 +48,7 @@ print(caneta.cor)
 print(caneta.cor_tampa)
 caneta.cor = 'ROSA'
 print(caneta.cor)
-print(caneta._cor)
+# print(caneta._cor)
 
 
 # class Caneta:

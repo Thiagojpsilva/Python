@@ -16,17 +16,31 @@
 
 
 class Foo:
+    """_summary_
+    """
 
     def __init__(self):
+        """_summary_
+        """
         self.public = 'Isso é publico'
         self._protected = 'IssO é protegido'
-        self.__privete = 'valor privado'
+        # self.__privete = 'valor privado'
 
     def metodo_publico(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return 'metodo_publico'
 
     @property
     def _metodo_proteced(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         return '_metodo_protected'
 
 
@@ -34,8 +48,8 @@ f = Foo()
 print(f.public)
 print(f.metodo_publico())
 # Por convenção não deve ser usado _(Protected) e __(Private) fora da classe
-print(f._protected)
+# print(f._protected)
 # Por convenção não deve ser usado _(Protected) e __(Private) fora da classe
-print(f._metodo_proteced)
+# print(f._metodo_proteced)
 # So deve ser usado entro da classe fora da classe está errado.
 # print(f._Foo__privete)

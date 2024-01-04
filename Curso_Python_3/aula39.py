@@ -1,6 +1,6 @@
 """Exercício aula(131)
-Crie uma função que encontra o numero com a 
-primeira ocorrencia de duplicadade.
+Crie uma função que encontra o numero com
+a primeira ocorrencia de duplicadade.
 Retorne a duplicação considerada.
 Requisitos:
     Exemplo:

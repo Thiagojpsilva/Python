@@ -1,169 +1,119 @@
-import abc
-import locale
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
-# locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+import pessoas
+import contas
 
 
-class Conta(abc.ABC):
+class Banco:
     """_summary_
-
-    Args:
-        abc (_type_): _description_
     """
 
-    def __init__(self, agencia: int, num_conta: int, saldo: float = 0) -> None:
-        self.agencia = agencia
-        self.num_conta = num_conta
-        self.saldo = saldo
+    def __init__(self,
+                 agencias: list[int] | None = None,
+                 clientes: list[pessoas.Pessoa] | None = None,
+                 contas: list[contas.Conta] | None = None
+                 ):
+        self.agencias = agencias or []
+        self.clientes = clientes or []
+        self.contas = contas or []
 
-    @abc.abstractmethod
-    def sacar(self, valor: float) -> float:
+    def _checa_agencia(self, conta):
         """_summary_
 
         Args:
-            valor (float): _description_
-
-        Returns:
-            float: _description_
-        """
-        ...
-
-    def deposito(self, valor: float) -> None:
-        """_summary_
-
-        Args:
-            valor (float): _description_
-        """
-        self.saldo += valor
-        self.detalhes(f'(DEPÓSITO DE {locale.currency(valor, grouping=True)})')
-
-    def detalhes(self, msg: str = '') -> None:
-        """_summary_
-
-        Args:
-            msg (str, optional): _description_. Defaults to ''.
+            conta (_type_): _description_
 
         Returns:
             _type_: _description_
         """
-        if self.__class__.__name__ == 'ContaPoupanca':
-            print(f'O seu saldo é: {locale.currency(
-                self.saldo, grouping=True)} {msg}')
-            return None
-        print(f'O seu saldo é: {locale.currency(self.saldo, grouping=True)} {
-              msg} \nLimite disponivel de: {locale.currency(self.limite,
-                                                            grouping=True)}')
+        if conta.agencia in self.agencias:
+            print('_checa_agencia: True')
+            return True
+        print('_checa_agencia: False')
+        return False
 
-
-class ContaPoupanca (Conta):
-    """_summary_
-
-    Args:
-        Conta (_type_): _description_
-    """
-
-    def sacar(self, valor):
-
-        valor_pos_saque = self.saldo - valor
-
-        if valor_pos_saque >= 0:
-            self.saldo -= valor
-            self.detalhes(
-                f'(SAQUE DE {locale.currency(valor, grouping=True)})')
-            return self.saldo
-
-        print(f'Saldo insuficiente.')
-        self.detalhes(
-            f'(SAQUE NEGADO {locale.currency(valor, grouping=True)})')
-
-
-class ContaCorrente(Conta):
-    """_summary_
-
-    Args:
-        Conta (_type_): _description_
-    """
-
-    def __init__(self, agencia: int, num_conta: int, saldo: float = 0, limite: float = 0):
+    def _checa_cliente(self, cliente):
         """_summary_
 
         Args:
-            agencia (int): _description_
-            num_conta (int): _description_
-            saldo (float, optional): _description_. Defaults to 0.
-            limite (float, optional): _description_. Defaults to 0.
-        """
-        super().__init__(agencia, num_conta, saldo)
-        self.limite = limite
-        self.limite_inicial = limite
-
-    def deposito(self, valor):
-        """_summary_
-
-        Args:
-            valor (_type_): _description_
+            cliente (_type_): _description_
 
         Returns:
             _type_: _description_
         """
-        if (self.limite != self.limite_inicial) and ((self.saldo + valor) >= 0):
-            self.limite = self.limite_inicial
-            return super().deposito(valor)
-        super().deposito(valor)
+        if cliente in self.clientes:
+            print('_checa_cliente: True')
+            return True
+        print('_checa_cliente: False')
+        return False
 
-    def sacar(self, valor):
+    def _checa_conta(self, conta):
         """_summary_
 
         Args:
-            valor (_type_): _description_
+            conta (_type_): _description_
 
         Returns:
             _type_: _description_
         """
-        valor_pos_saque = self.saldo - valor
-        valor_pos_s_limite = self.limite - valor
+        if conta in self.contas:
+            print('_checa_conta: True')
+            return True
+        print('_checa_conta: False')
+        return False
 
-        if valor_pos_saque >= 0:
-            self.saldo -= valor
-            self.detalhes(
-                f'(SAQUE DE {locale.currency(valor, grouping=True)})')
-            return self.saldo
+    def _checa_se_conta_cliente(self, cliente, conta):
+        """_summary_
 
-        elif valor_pos_s_limite >= 0 and self.limite == self.limite_inicial:
-            self.saldo -= valor
-            self.limite += self.saldo
-            self.detalhes(
-                f'(SAQUE DE {locale.currency(valor, grouping=True)})')
-            return self.saldo
+        Args:
+            cliente (_type_): _description_
+            conta (_type_): _description_
 
-        elif valor_pos_s_limite >= 0 and self.limite != self.limite_inicial:
-            self.saldo -= valor
-            self.limite -= valor
-            self.detalhes(
-                f'(SAQUE DE {locale.currency(valor, grouping=True)})')
-            return self.saldo
+        Returns:
+            _type_: _description_
+        """
+        if conta is cliente.conta:
+            print('_checa_se_conta_cliente: True')
+            return True
+        print('_checa_se_conta_cliente: False')
+        return False
 
-        else:
-            self.detalhes(
-                f'(SAQUE NEGADO {locale.currency(valor, grouping=True)})')
-            print(f'Saldo insuficiente.')
+    def autenticar(self, cliente: pessoas.Pessoa, conta: contas.Conta):
+        """_summary_
+
+        Args:
+            cliente (pessoas.Pessoa): _description_
+            conta (contas.Conta): _description_
+
+        Returns:
+            _type_: _description_
+        """
+        return self._checa_agencia(conta) and \
+            self._checa_conta(conta) and \
+            self._checa_cliente(cliente) and \
+            self._checa_se_conta_cliente(cliente, conta)
+
+    def __repr__(self):
+        class_name = type(self).__name__
+        attrs = f'({self.agencias!r}, {self.clientes!r}, {self.contas!r})'
+        return f'{class_name}{attrs}'
 
 
 if __name__ == '__main__':
-    # cp1 = ContaPoupanca(111,222)
-    # cp1.sacar(100)
-    # cp1.deposito(1000)
-    # cp1.deposito(900)
-    # cp1.sacar(500)
-    # print(cp1.__dict__)
+    #    p1 = Pessoa('Thiago', 37)
+    #    print(p1.nome, p1.idade)
+    c1 = pessoas.Cliente('Luiz', 30)
+    cc1 = contas.ContaCorrente(1212, 1220)
+    c1.conta = cc1
 
-    print('#'*10, 'CONTA CORRENTE', '#'*10)
+    c2 = pessoas.Cliente('Jose', 20)
+    cp1 = contas.ContaPoupanca(1020, 1111)
+    c2.conta = cp1
+    banco = Banco()
+    banco.clientes.extend([c1, c2])
+    banco.contas.extend([cc1, cp1])
+    banco.agencias.extend([1212, 1020])
 
-    cc1 = ContaCorrente(111, 333, 0, 800)
-    # cc1.sacar(1000)
-    cc1.sacar(300)
-    cc1.sacar(400)
-    cc1.deposito(1000)
-    # cc1.deposito(900)
-    # cc1.sacar(500)
-    print(cc1.__dict__)
+    print(banco.autenticar(c1, c1.conta))
+
+    if banco.autenticar(c1, cc1):
+        cc1.deposito(10000)
+        print(c1.conta)

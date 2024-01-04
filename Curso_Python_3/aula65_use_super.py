@@ -38,8 +38,7 @@ class B(A):
 class C(B):
     atributo_c = 'valor c'
 
-    def __init__(self, *args, **kwargs):
-        # print('EI, burlei o sistema.')
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
     def metodo(self):

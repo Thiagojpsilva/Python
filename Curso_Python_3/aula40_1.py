@@ -40,8 +40,13 @@ lista_dictionary = [
 ]
 
 
-def exibir(lista):
-    for item in lista:
+def exibir(value):
+    """_summary_
+
+    Args:
+        lista (_type_): _description_
+    """
+    for item in value:
         print(item)
     print()
 
